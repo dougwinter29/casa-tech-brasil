@@ -1,0 +1,112 @@
+export const siteConfig = {
+  name: "Casa Tech Brasil",
+  tagline: "Automação Residencial & Gadgets Inteligentes",
+  description:
+    "O maior portal de casa inteligente do Brasil. Reviews, comparativos e guias completos sobre automação residencial, gadgets, Alexa, câmeras Wi-Fi, fechaduras digitais e muito mais.",
+  url: "https://casatechbrasil.com.br",
+  domain: "casatechbrasil.com.br",
+  locale: "pt-BR",
+  twitterHandle: "@casatechbrasil",
+  email: "contato@casatechbrasil.com.br",
+  logo: "/logo.svg",
+  ogImage: "/og-image.jpg",
+  authors: [{ name: "Casa Tech Brasil", url: "https://casatechbrasil.com.br" }],
+  keywords: [
+    "casa inteligente",
+    "automação residencial",
+    "smart home",
+    "gadgets inteligentes",
+    "Alexa",
+    "câmeras Wi-Fi",
+    "fechaduras digitais",
+    "iluminação smart",
+    "sensores",
+    "robô aspirador",
+    "tecnologia para casa",
+  ],
+  affiliateDisclaimer:
+    "Este site contém links de afiliados. Quando você compra através desses links, podemos ganhar uma comissão sem custo adicional para você.",
+  googleAnalyticsId: process.env.NEXT_PUBLIC_GA_ID || "",
+  googleAdsenseId: process.env.NEXT_PUBLIC_ADSENSE_ID || "",
+};
+
+export const navLinks = [
+  { label: "Home", href: "/" },
+  { label: "Blog", href: "/blog" },
+  {
+    label: "Categorias",
+    href: "/categorias",
+    submenu: [
+      { label: "Robôs Aspiradores", href: "/categorias/robos-aspiradores" },
+      { label: "Câmeras Wi-Fi", href: "/categorias/cameras-wifi" },
+      { label: "Fechaduras Digitais", href: "/categorias/fechaduras-digitais" },
+      { label: "Iluminação Smart", href: "/categorias/iluminacao-smart" },
+      { label: "Assistentes Virtuais", href: "/categorias/assistentes-virtuais" },
+      { label: "Sensores", href: "/categorias/sensores" },
+      { label: "Interruptores Smart", href: "/categorias/interruptores-smart" },
+    ],
+  },
+  { label: "Reviews", href: "/reviews" },
+  { label: "Comparativos", href: "/comparativos" },
+  { label: "Sobre", href: "/sobre" },
+  { label: "Contato", href: "/contato" },
+];
+
+export const categories = [
+  {
+    slug: "robos-aspiradores",
+    name: "Robôs Aspiradores",
+    description: "Os melhores robôs aspiradores para manter sua casa limpa automaticamente",
+    icon: "🤖",
+    color: "from-blue-500 to-blue-700",
+  },
+  {
+    slug: "cameras-wifi",
+    name: "Câmeras Wi-Fi",
+    description: "Câmeras de segurança inteligentes para monitorar sua casa de qualquer lugar",
+    icon: "📷",
+    color: "from-purple-500 to-purple-700",
+  },
+  {
+    slug: "fechaduras-digitais",
+    name: "Fechaduras Digitais",
+    description: "Fechaduras inteligentes com biometria, senha e controle remoto",
+    icon: "🔐",
+    color: "from-green-500 to-green-700",
+  },
+  {
+    slug: "iluminacao-smart",
+    name: "Iluminação Smart",
+    description: "Lâmpadas e sistemas de iluminação inteligente com controle por app",
+    icon: "💡",
+    color: "from-yellow-500 to-yellow-600",
+  },
+  {
+    slug: "assistentes-virtuais",
+    name: "Assistentes Virtuais",
+    description: "Alexa, Google Assistente e outros dispositivos de voz inteligentes",
+    icon: "🗣️",
+    color: "from-cyan-500 to-cyan-700",
+  },
+  {
+    slug: "sensores",
+    name: "Sensores",
+    description: "Sensores de presença, temperatura, fumaça e muito mais",
+    icon: "📡",
+    color: "from-red-500 to-red-700",
+  },
+  {
+    slug: "interruptores-smart",
+    name: "Interruptores Smart",
+    description: "Interruptores inteligentes para automação da iluminação",
+    icon: "🔌",
+    color: "from-indigo-500 to-indigo-700",
+  },
+  {
+    slug: "tomadas-smart",
+    name: "Tomadas Smart",
+    description: "Tomadas inteligentes com controle remoto e monitoramento de energia",
+    icon: "⚡",
+    color: "from-orange-500 to-orange-700",
+  },
+];
