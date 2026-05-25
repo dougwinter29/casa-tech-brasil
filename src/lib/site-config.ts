@@ -53,6 +53,17 @@ export const navLinks = [
   { label: "Contato", href: "/contato" },
 ];
 
+/** Retorna o nome de exibição de uma categoria dado o slug */
+export function getCategoryName(slug: string): string {
+  const cat = categories.find((c) => c.slug === slug);
+  if (cat) return cat.name;
+  // Fallback: capitaliza cada palavra e troca hífens por espaços
+  return slug
+    .split("-")
+    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+    .join(" ");
+}
+
 export const categories = [
   {
     slug: "robos-aspiradores",

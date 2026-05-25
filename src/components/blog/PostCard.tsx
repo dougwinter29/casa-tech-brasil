@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Clock, Calendar } from "lucide-react";
 import { Post } from "@/lib/types";
 import { formatDate } from "@/lib/utils";
+import { getCategoryName } from "@/lib/site-config";
 
 interface PostCardProps {
   post: Post;
@@ -26,7 +27,7 @@ export default function PostCard({ post, variant = "default" }: PostCardProps) {
           />
         </div>
         <div className="flex-1 min-w-0">
-          <p className="text-xs text-brand-600 font-semibold mb-1">{post.category}</p>
+          <p className="text-xs text-brand-600 font-semibold mb-1">{getCategoryName(post.category)}</p>
           <h3 className="text-sm font-semibold text-slate-800 group-hover:text-brand-600 transition-colors line-clamp-2">
             {post.title}
           </h3>
@@ -59,7 +60,7 @@ export default function PostCard({ post, variant = "default" }: PostCardProps) {
           )}
           <div className="absolute bottom-4 left-4 z-10">
             <span className="text-xs font-semibold text-white bg-brand-600/80 backdrop-blur-sm px-2.5 py-1 rounded-full">
-              {post.category}
+              {getCategoryName(post.category)}
             </span>
           </div>
         </div>
@@ -99,7 +100,7 @@ export default function PostCard({ post, variant = "default" }: PostCardProps) {
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
         <div className="absolute bottom-3 left-3">
           <span className="text-xs font-semibold text-white bg-brand-600/80 backdrop-blur-sm px-2.5 py-1 rounded-full">
-            {post.category}
+            {getCategoryName(post.category)}
           </span>
         </div>
       </div>
