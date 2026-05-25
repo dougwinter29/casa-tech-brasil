@@ -22,13 +22,13 @@ export default function NewsletterSection() {
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             Receba as Melhores Ofertas
           </h2>
-          <p className="text-brand-100 text-lg mb-8 leading-relaxed">
+          <p className="text-white/90 text-lg mb-8 leading-relaxed">
             Cadastre-se e receba semanalmente: ofertas imperdíveis, novos lançamentos e guias exclusivos de casa inteligente.
           </p>
 
           <NewsletterForm />
 
-          <p className="mt-4 text-brand-200 text-xs">
+          <p className="mt-4 text-white/60 text-xs">
             ✓ Sem spam &nbsp;·&nbsp; ✓ Cancele quando quiser &nbsp;·&nbsp; ✓ 100% gratuito
           </p>
         </div>

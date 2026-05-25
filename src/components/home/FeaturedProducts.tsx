@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Star, ExternalLink, TrendingUp } from "lucide-react";
 import { formatPrice, calculateDiscount } from "@/lib/utils";
+import { affiliateLinks } from "@/lib/affiliate-links";
 
 const featuredProducts = [
   {
@@ -14,7 +15,7 @@ const featuredProducts = [
     category: "Robô Aspirador",
     badge: "Melhor do Teste",
     emoji: "🤖",
-    affiliateUrl: "#afiliado-roborock-s8",
+    affiliateUrl: affiliateLinks["roborock-s8"],
     store: "mercadolivre",
   },
   {
@@ -28,7 +29,7 @@ const featuredProducts = [
     category: "Assistente de Voz",
     badge: "Mais Vendido",
     emoji: "🗣️",
-    affiliateUrl: "#afiliado-echo-dot-5",
+    affiliateUrl: affiliateLinks["echo-dot-5"],
     store: "amazon",
   },
   {
@@ -42,7 +43,7 @@ const featuredProducts = [
     category: "Fechadura Digital",
     badge: "Escolha Nacional",
     emoji: "🔐",
-    affiliateUrl: "#afiliado-intelbras-fr620",
+    affiliateUrl: affiliateLinks["intelbras-fr620"],
     store: "mercadolivre",
   },
   {
@@ -56,7 +57,7 @@ const featuredProducts = [
     category: "Câmera Wi-Fi",
     badge: "Custo-Benefício",
     emoji: "📷",
-    affiliateUrl: "#afiliado-tapo-c200",
+    affiliateUrl: affiliateLinks["tapo-c200"],
     store: "mercadolivre",
   },
 ];

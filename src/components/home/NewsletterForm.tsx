@@ -13,7 +13,7 @@ export default function NewsletterForm() {
         <CheckCircle size={24} className="text-green-300" />
         <div className="text-left">
           <p className="text-white font-semibold">Perfeito! Você está na lista.</p>
-          <p className="text-brand-200 text-sm">Em breve você receberá nossas dicas no e-mail.</p>
+          <p className="text-white/70 text-sm">Em breve você receberá nossas dicas no e-mail.</p>
         </div>
       </div>
     );
@@ -30,7 +30,7 @@ export default function NewsletterForm() {
         onChange={(e) => setEmail(e.target.value)}
         placeholder="Digite seu melhor e-mail"
         required
-        className="flex-1 px-5 py-3.5 bg-white/15 border border-white/30 rounded-xl text-white placeholder:text-brand-200 focus:outline-none focus:border-white/60 focus:bg-white/20 transition-all text-sm"
+        className="flex-1 px-5 py-3.5 bg-white/15 border border-white/30 rounded-xl text-white placeholder:text-white/50 focus:outline-none focus:border-white/60 focus:bg-white/20 transition-all text-sm"
       />
       <button
         type="submit"

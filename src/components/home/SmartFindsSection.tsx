@@ -3,12 +3,12 @@ import { ExternalLink, Flame } from "lucide-react";
 import { formatPrice } from "@/lib/utils";
 
 const achados = [
-  { emoji: "💡", name: "Lâmpada Smart RGB", price: 39, originalPrice: 79, store: "Mercado Livre", href: "#", badge: "🔥 Hot" },
-  { emoji: "🔌", name: "Tomada Wi-Fi c/ Medição", price: 89, originalPrice: 149, store: "Amazon", href: "#", badge: "⚡ Oferta" },
-  { emoji: "📡", name: "Sensor de Presença Zigbee", price: 59, originalPrice: 99, store: "Mercado Livre", href: "#", badge: "💎 Custo-Benefício" },
-  { emoji: "🎛️", name: "Controle IR Universal", price: 79, originalPrice: 129, store: "Amazon", href: "#", badge: "🔥 Hot" },
-  { emoji: "💡", name: "Tira LED RGB 5m Wi-Fi", price: 79, originalPrice: 159, store: "Mercado Livre", href: "#", badge: "⚡ Oferta" },
-  { emoji: "📷", name: "Câmera Externa IP66 4MP", price: 249, originalPrice: 399, store: "Amazon", href: "#", badge: "💎 Custo-Benefício" },
+  { emoji: "💡", name: "Lâmpada Smart RGB", price: 39, originalPrice: 79, store: "Mercado Livre", href: "https://lista.mercadolivre.com.br/lampada-inteligente-rgb-wifi?matt_tool=45125913&matt_word=casatechbrasil", badge: "🔥 Hot" },
+  { emoji: "🔌", name: "Tomada Wi-Fi c/ Medição", price: 89, originalPrice: 149, store: "Mercado Livre", href: "https://lista.mercadolivre.com.br/tomada-inteligente-wifi-medicao-energia?matt_tool=45125913&matt_word=casatechbrasil", badge: "⚡ Oferta" },
+  { emoji: "📡", name: "Sensor de Presença Zigbee", price: 59, originalPrice: 99, store: "Mercado Livre", href: "https://lista.mercadolivre.com.br/sensor-presenca-zigbee-smart?matt_tool=45125913&matt_word=casatechbrasil", badge: "💎 Custo-Benefício" },
+  { emoji: "🎛️", name: "Controle IR Universal", price: 79, originalPrice: 129, store: "Mercado Livre", href: "https://lista.mercadolivre.com.br/controle-remoto-ir-universal-wifi?matt_tool=45125913&matt_word=casatechbrasil", badge: "🔥 Hot" },
+  { emoji: "💡", name: "Tira LED RGB 5m Wi-Fi", price: 79, originalPrice: 159, store: "Mercado Livre", href: "https://lista.mercadolivre.com.br/tira-led-rgb-wifi-5m-smart?matt_tool=45125913&matt_word=casatechbrasil", badge: "⚡ Oferta" },
+  { emoji: "📷", name: "Câmera Externa IP66 4MP", price: 249, originalPrice: 399, store: "Mercado Livre", href: "https://lista.mercadolivre.com.br/camera-ip-externa-ip66-4mp-wifi?matt_tool=45125913&matt_word=casatechbrasil", badge: "💎 Custo-Benefício" },
 ];
 
 export default function SmartFindsSection() {

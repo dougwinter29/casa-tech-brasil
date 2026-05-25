@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { ExternalLink, Star } from "lucide-react";
 import { formatPrice } from "@/lib/utils";
+import { affiliateLinks } from "@/lib/affiliate-links";
 
 export const metadata: Metadata = {
   title: "Comparativos — Produtos de Casa Inteligente Lado a Lado",
@@ -45,12 +46,12 @@ export default function ComparativosPage() {
                 </thead>
                 <tbody>
                   {[
-                    { name: "Roborock S8 Pro Ultra", price: 4999, suc: "6.000 Pa", esfregao: "✅ Sônico", base: "✅ Completa", nota: 9.8, href: "#afiliado-roborock-s8", badge: "🏆 Melhor" },
-                    { name: "Dreame L20 Ultra", price: 3799, suc: "7.000 Pa", esfregao: "✅ Rotativo", base: "✅ c/ Secagem", nota: 9.6, href: "#afiliado-dreame-l20" },
-                    { name: "Xiaomi X20 Plus", price: 3299, suc: "4.000 Pa", esfregao: "✅ Eletrônico", base: "✅ Limpeza", nota: 9.4, href: "#afiliado-xiaomi-x20", badge: "💎 Custo-Ben" },
-                    { name: "Ecovacs T30 Pro", price: 2999, suc: "11.000 Pa", esfregao: "✅ Rotativo", base: "✅ Completa", nota: 9.5, href: "#afiliado-deebot-t30" },
-                    { name: "Deebot N10 Plus", price: 1499, suc: "4.300 Pa", esfregao: "✅ Básico", base: "✅ Esvaziamento", nota: 8.8, href: "#afiliado-deebot-n10" },
-                    { name: "Positivo Smart", price: 899, suc: "1.800 Pa", esfregao: "❌", base: "❌", nota: 7.2, href: "#afiliado-positivo-smart", badge: "💵 Econômico" },
+                    { name: "Roborock S8 Pro Ultra", price: 4999, suc: "6.000 Pa", esfregao: "✅ Sônico", base: "✅ Completa", nota: 9.8, href: affiliateLinks["roborock-s8"], badge: "🏆 Melhor" },
+                    { name: "Dreame L20 Ultra", price: 3799, suc: "7.000 Pa", esfregao: "✅ Rotativo", base: "✅ c/ Secagem", nota: 9.6, href: affiliateLinks["dreame-l20"] },
+                    { name: "Xiaomi X20 Plus", price: 3299, suc: "4.000 Pa", esfregao: "✅ Eletrônico", base: "✅ Limpeza", nota: 9.4, href: affiliateLinks["xiaomi-x20"], badge: "💎 Custo-Ben" },
+                    { name: "Ecovacs T30 Pro", price: 2999, suc: "11.000 Pa", esfregao: "✅ Rotativo", base: "✅ Completa", nota: 9.5, href: affiliateLinks["deebot-t30"] },
+                    { name: "Deebot N10 Plus", price: 1499, suc: "4.300 Pa", esfregao: "✅ Básico", base: "✅ Esvaziamento", nota: 8.8, href: affiliateLinks["deebot-n10"] },
+                    { name: "Positivo Smart", price: 899, suc: "1.800 Pa", esfregao: "❌", base: "❌", nota: 7.2, href: affiliateLinks["positivo-smart"], badge: "💵 Econômico" },
                   ].map((r) => (
                     <tr key={r.name} className="border-b border-slate-50 hover:bg-slate-50 transition-colors">
                       <td className="px-4 py-3 font-medium text-slate-900">
@@ -100,12 +101,12 @@ export default function ComparativosPage() {
                 </thead>
                 <tbody>
                   {[
-                    { name: "Reolink Argus 4 Pro", price: 699, res: "4K", uso: "Externa", app: "❌", nota: 9.4, href: "#afiliado-reolink", badge: "🏆 Melhor Ext" },
-                    { name: "Intelbras iM5", price: 249, res: "5MP", uso: "Interna", app: "✅", nota: 9.0, href: "#afiliado-intelbras-im5", badge: "🇧🇷 Nacional" },
-                    { name: "Xiaomi 2K Pro", price: 199, res: "2K", uso: "Interna", app: "✅", nota: 8.8, href: "#afiliado-xiaomi-2k", badge: "💎 Custo-Ben" },
-                    { name: "TP-Link Tapo C200", price: 169, res: "1080p", uso: "Interna", app: "✅", nota: 8.5, href: "#afiliado-tapo-c200", badge: "💵 Mais Vendida" },
-                    { name: "Arlo Pro 5S", price: 1299, res: "2K HDR", uso: "Ambos", app: "❌", nota: 9.6, href: "#afiliado-arlo-pro5" },
-                    { name: "Ring Doorbell 4", price: 799, res: "1080p", uso: "Porta", app: "✅", nota: 9.0, href: "#afiliado-ring" },
+                    { name: "Reolink Argus 4 Pro", price: 699, res: "4K", uso: "Externa", app: "❌", nota: 9.4, href: affiliateLinks["reolink"], badge: "🏆 Melhor Ext" },
+                    { name: "Intelbras iM5", price: 249, res: "5MP", uso: "Interna", app: "✅", nota: 9.0, href: affiliateLinks["intelbras-im5"], badge: "🇧🇷 Nacional" },
+                    { name: "Xiaomi 2K Pro", price: 199, res: "2K", uso: "Interna", app: "✅", nota: 8.8, href: affiliateLinks["xiaomi-2k"], badge: "💎 Custo-Ben" },
+                    { name: "TP-Link Tapo C200", price: 169, res: "1080p", uso: "Interna", app: "✅", nota: 8.5, href: affiliateLinks["tapo-c200"], badge: "💵 Mais Vendida" },
+                    { name: "Arlo Pro 5S", price: 1299, res: "2K HDR", uso: "Ambos", app: "❌", nota: 9.6, href: affiliateLinks["arlo-pro5"] },
+                    { name: "Ring Doorbell 4", price: 799, res: "1080p", uso: "Porta", app: "✅", nota: 9.0, href: affiliateLinks["ring"] },
                   ].map((r) => (
                     <tr key={r.name} className="border-b border-slate-50 hover:bg-slate-50 transition-colors">
                       <td className="px-4 py-3 font-medium text-slate-900">

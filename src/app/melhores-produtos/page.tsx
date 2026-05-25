@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { Star, ExternalLink, TrendingUp, Award } from "lucide-react";
 import { formatPrice, calculateDiscount } from "@/lib/utils";
+import { affiliateLinks } from "@/lib/affiliate-links";
 
 export const metadata: Metadata = {
   title: "Melhores Produtos de Casa Inteligente 2026",
@@ -16,7 +17,7 @@ const products = [
     price: 4999, originalPrice: 5999, rating: 4.9, reviews: 847,
     pros: ["Base de auto-esvaziamento", "Esfregão sônico", "Mapeamento laser preciso"],
     cons: ["Preço elevado"],
-    emoji: "🤖", badge: "🥇 Melhor do Teste", href: "#afiliado-roborock", store: "Mercado Livre",
+    emoji: "🤖", badge: "🥇 Melhor do Teste", href: affiliateLinks["roborock"], store: "Mercado Livre",
   },
   {
     rank: 2, category: "Assistente Virtual", name: "Amazon Echo Dot 5ª Gen",
@@ -24,7 +25,7 @@ const products = [
     price: 179, originalPrice: 299, rating: 4.8, reviews: 12340,
     pros: ["Melhor compatibilidade do mercado", "Hub Zigbee integrado", "Preço acessível"],
     cons: ["Qualidade de som básica"],
-    emoji: "🗣️", badge: "🥈 Melhor Custo-Benefício", href: "#afiliado-echo-dot", store: "Amazon",
+    emoji: "🗣️", badge: "🥈 Melhor Custo-Benefício", href: affiliateLinks["echo-dot"], store: "Amazon",
   },
   {
     rank: 3, category: "Câmera de Segurança", name: "Reolink Argus 4 Pro",
@@ -32,7 +33,7 @@ const products = [
     price: 699, originalPrice: 899, rating: 4.8, reviews: 2341,
     pros: ["4K com visão 180°", "Sem fio (bateria)", "Painel solar opcional"],
     cons: ["App em inglês"],
-    emoji: "📷", badge: "🥉 Melhor Externa", href: "#afiliado-reolink", store: "Mercado Livre",
+    emoji: "📷", badge: "🥉 Melhor Externa", href: affiliateLinks["reolink"], store: "Mercado Livre",
   },
   {
     rank: 4, category: "Fechadura Digital", name: "Intelbras FR 620",
@@ -40,7 +41,7 @@ const products = [
     price: 799, originalPrice: 999, rating: 4.7, reviews: 2156,
     pros: ["Biometria + Wi-Fi + App PT-BR", "Suporte nacional", "Custo-benefício excelente"],
     cons: ["Design básico"],
-    emoji: "🔐", badge: "🏆 Melhor Nacional", href: "#afiliado-intelbras-fr620", store: "Mercado Livre",
+    emoji: "🔐", badge: "🏆 Melhor Nacional", href: affiliateLinks["intelbras-fr620"], store: "Mercado Livre",
   },
   {
     rank: 5, category: "Iluminação Smart", name: "Govee Tira LED Wi-Fi 5m",
@@ -48,7 +49,7 @@ const products = [
     price: 149, originalPrice: 249, rating: 4.5, reviews: 5621,
     pros: ["RGB completo", "Sync com música", "Fácil instalação"],
     cons: ["Longevidade média"],
-    emoji: "💡", badge: "⭐ Destaque", href: "#afiliado-govee", store: "Amazon",
+    emoji: "💡", badge: "⭐ Destaque", href: affiliateLinks["govee"], store: "Amazon",
   },
   {
     rank: 6, category: "Câmera Interna", name: "TP-Link Tapo C200",
@@ -56,7 +57,7 @@ const products = [
     price: 169, originalPrice: 229, rating: 4.6, reviews: 8921,
     pros: ["Pan-tilt 360°", "App em português", "Preço imbatível"],
     cons: ["Resolução 1080p apenas"],
-    emoji: "🎥", badge: "💎 Mais Vendida BR", href: "#afiliado-tapo-c200", store: "Mercado Livre",
+    emoji: "🎥", badge: "💎 Mais Vendida BR", href: affiliateLinks["tapo-c200"], store: "Mercado Livre",
   },
 ];
 

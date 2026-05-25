@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { Star, ExternalLink } from "lucide-react";
 import { formatPrice } from "@/lib/utils";
+import { affiliateLinks } from "@/lib/affiliate-links";
 
 export const metadata: Metadata = {
   title: "Reviews — Análises Honestas de Produtos Smart Home",
@@ -20,7 +21,7 @@ const reviews = [
     verdict: "O melhor robô aspirador disponível no Brasil em 2026. Sem dúvida.",
     pros: ["Base de auto-esvaziamento completa", "Esfregão sônico com levantamento automático", "Mapeamento laser preciso", "App em português razoável"],
     cons: ["Preço elevado", "App poderia ser melhor em PT-BR"],
-    affiliateHref: "#afiliado-roborock-s8",
+    affiliateHref: affiliateLinks["roborock-s8"],
     postHref: "/blog/melhores-robos-aspiradores-2026",
   },
   {
@@ -33,7 +34,7 @@ const reviews = [
     verdict: "Melhor fechadura digital para o mercado brasileiro. App em português e suporte nacional são diferenciais decisivos.",
     pros: ["Biometria + senha + RFID + Wi-Fi", "App completamente em português", "Suporte técnico nacional", "Preço justo"],
     cons: ["Design não é o mais moderno", "Setup inicial pode ser confuso"],
-    affiliateHref: "#afiliado-intelbras-fr620",
+    affiliateHref: affiliateLinks["intelbras-fr620"],
     postHref: "/blog/melhores-fechaduras-digitais",
   },
   {
@@ -46,7 +47,7 @@ const reviews = [
     verdict: "O melhor investimento em casa inteligente por menos de R$200. Ponto final.",
     pros: ["Melhor compatibilidade do mercado", "Hub Zigbee integrado", "Sensor de temperatura", "Preço imbatível"],
     cons: ["Qualidade de som básica", "Dados de voz vão para Amazon"],
-    affiliateHref: "#afiliado-echo-dot-5",
+    affiliateHref: affiliateLinks["echo-dot-5"],
     postHref: "/blog/alexa-vale-a-pena-guia-completo",
   },
   {
@@ -59,7 +60,7 @@ const reviews = [
     verdict: "A câmera que recomendamos para quem está começando. Faz tudo que precisa por menos de R$200.",
     pros: ["Pan-tilt 360°", "App completamente em português", "Preço acessível", "Detecção de movimento confiável"],
     cons: ["Resolução 1080p apenas (sem 2K)", "Visão noturna poderia ser melhor"],
-    affiliateHref: "#afiliado-tapo-c200",
+    affiliateHref: affiliateLinks["tapo-c200"],
     postHref: "/blog/melhores-cameras-wifi-casa",
   },
 ];
