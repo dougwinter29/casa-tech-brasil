@@ -3,6 +3,7 @@ import path from "path";
 import matter from "gray-matter";
 import { Post } from "./types";
 import { getReadingTime } from "./utils";
+import { getCategoryImage } from "./category-images";
 
 const postsDirectory = path.join(process.cwd(), "src/content/posts");
 
@@ -28,7 +29,11 @@ export function getPostBySlug(slug: string): Post | null {
       authorBio: data.authorBio,
       category: data.category || "geral",
       tags: data.tags || [],
-      image: data.image || "/images/default-post.jpg",
+      // Se o frontmatter tem caminho local (/images/...) que não existe, usa imagem por categoria
+      image:
+        data.image && !data.image.startsWith("/images/")
+          ? data.image
+          : getCategoryImage(data.category || "default", 800, 450),
       imageAlt: data.imageAlt || data.title || "",
       readingTime: getReadingTime(content),
       featured: data.featured || false,

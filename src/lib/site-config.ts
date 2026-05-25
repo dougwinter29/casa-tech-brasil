@@ -3,7 +3,7 @@ export const siteConfig = {
   tagline: "Automação Residencial & Gadgets Inteligentes",
   description:
     "O maior portal de casa inteligente do Brasil. Reviews, comparativos e guias completos sobre automação residencial, gadgets, Alexa, câmeras Wi-Fi, fechaduras digitais e muito mais.",
-  url: "https://casatechbrasil.com.br",
+  url: "https://www.casatechbrasil.com.br",
   domain: "casatechbrasil.com.br",
   locale: "pt-BR",
   twitterHandle: "@casatechbrasil",
@@ -44,6 +44,7 @@ export const navLinks = [
       { label: "Assistentes Virtuais", href: "/categorias/assistentes-virtuais" },
       { label: "Sensores", href: "/categorias/sensores" },
       { label: "Interruptores Smart", href: "/categorias/interruptores-smart" },
+      { label: "Tomadas Smart", href: "/categorias/tomadas-smart" },
     ],
   },
   { label: "Reviews", href: "/reviews" },

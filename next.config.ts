@@ -1,7 +1,12 @@
 import type { NextConfig } from "next";
 
+const isDev = process.env.NODE_ENV === "development";
+
 const nextConfig: NextConfig = {
   images: {
+    // Em dev o Node não consegue verificar SSL de redes corporativas;
+    // unoptimized deixa o browser carregar direto. Em produção (Vercel) otimiza normalmente.
+    unoptimized: isDev,
     remotePatterns: [
       { protocol: "https", hostname: "images.unsplash.com" },
       { protocol: "https", hostname: "via.placeholder.com" },

@@ -25,7 +25,7 @@ const products = [
     price: 179, originalPrice: 299, rating: 4.8, reviews: 12340,
     pros: ["Melhor compatibilidade do mercado", "Hub Zigbee integrado", "Preço acessível"],
     cons: ["Qualidade de som básica"],
-    emoji: "🗣️", badge: "🥈 Melhor Custo-Benefício", href: affiliateLinks["echo-dot"], store: "Amazon",
+    emoji: "🗣️", badge: "🥈 Melhor Custo-Benefício", href: affiliateLinks["echo-dot"], store: "Mercado Livre",
   },
   {
     rank: 3, category: "Câmera de Segurança", name: "Reolink Argus 4 Pro",
@@ -49,7 +49,7 @@ const products = [
     price: 149, originalPrice: 249, rating: 4.5, reviews: 5621,
     pros: ["RGB completo", "Sync com música", "Fácil instalação"],
     cons: ["Longevidade média"],
-    emoji: "💡", badge: "⭐ Destaque", href: affiliateLinks["govee"], store: "Amazon",
+    emoji: "💡", badge: "⭐ Destaque", href: affiliateLinks["govee"], store: "Mercado Livre",
   },
   {
     rank: 6, category: "Câmera Interna", name: "TP-Link Tapo C200",

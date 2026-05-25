@@ -1,7 +1,9 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Star, ExternalLink, TrendingUp } from "lucide-react";
 import { formatPrice, calculateDiscount } from "@/lib/utils";
 import { affiliateLinks } from "@/lib/affiliate-links";
+import { productImages } from "@/lib/category-images";
 
 const featuredProducts = [
   {
@@ -14,7 +16,7 @@ const featuredProducts = [
     reviewCount: 847,
     category: "Robô Aspirador",
     badge: "Melhor do Teste",
-    emoji: "🤖",
+    image: productImages["roborock-s8"],
     affiliateUrl: affiliateLinks["roborock-s8"],
     store: "mercadolivre",
   },
@@ -28,9 +30,9 @@ const featuredProducts = [
     reviewCount: 12340,
     category: "Assistente de Voz",
     badge: "Mais Vendido",
-    emoji: "🗣️",
+    image: productImages["echo-dot-5"],
     affiliateUrl: affiliateLinks["echo-dot-5"],
-    store: "amazon",
+    store: "mercadolivre",
   },
   {
     id: "intelbras-fr620",
@@ -42,7 +44,7 @@ const featuredProducts = [
     reviewCount: 2156,
     category: "Fechadura Digital",
     badge: "Escolha Nacional",
-    emoji: "🔐",
+    image: productImages["intelbras-fr620"],
     affiliateUrl: affiliateLinks["intelbras-fr620"],
     store: "mercadolivre",
   },
@@ -56,21 +58,20 @@ const featuredProducts = [
     reviewCount: 8921,
     category: "Câmera Wi-Fi",
     badge: "Custo-Benefício",
-    emoji: "📷",
+    image: productImages["tapo-c200"],
     affiliateUrl: affiliateLinks["tapo-c200"],
     store: "mercadolivre",
   },
 ];
 
-const storeColors: Record<string, string> = {
-  mercadolivre: "bg-yellow-400 text-yellow-900",
-  amazon: "bg-orange-400 text-white",
-  americanas: "bg-red-500 text-white",
-};
-
 const storeLabels: Record<string, string> = {
   mercadolivre: "Mercado Livre",
   amazon: "Amazon",
+};
+
+const storeBtnColors: Record<string, string> = {
+  mercadolivre: "bg-yellow-400 hover:bg-yellow-500 text-yellow-900",
+  amazon: "bg-orange-400 hover:bg-orange-500 text-white",
 };
 
 export default function FeaturedProducts() {
@@ -107,17 +108,22 @@ export default function FeaturedProducts() {
                 className="group bg-white rounded-2xl border border-slate-100 overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col"
               >
                 {/* Image area */}
-                <div className="relative h-44 bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center overflow-hidden">
-                  <span className="text-6xl group-hover:scale-110 transition-transform duration-300">
-                    {product.emoji}
-                  </span>
+                <div className="relative h-44 bg-slate-100 overflow-hidden">
+                  <Image
+                    src={product.image}
+                    alt={product.name}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
                   {product.badge && (
-                    <div className="absolute top-3 left-3 bg-brand-600 text-white text-xs font-bold px-2.5 py-1 rounded-full">
+                    <div className="absolute top-3 left-3 bg-brand-600 text-white text-xs font-bold px-2.5 py-1 rounded-full z-10">
                       {product.badge}
                     </div>
                   )}
                   {discount > 0 && (
-                    <div className="absolute top-3 right-3 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full">
+                    <div className="absolute top-3 right-3 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full z-10">
                       -{discount}%
                     </div>
                   )}
@@ -125,9 +131,9 @@ export default function FeaturedProducts() {
 
                 {/* Content */}
                 <div className="p-4 flex flex-col flex-1">
-                  <p className="text-xs text-slate-400 font-medium mb-1">{product.category}</p>
+                  <p className="text-xs text-brand-600 font-semibold mb-1">{product.category}</p>
                   <h3 className="font-bold text-slate-900 mb-1 leading-tight">{product.name}</h3>
-                  <p className="text-xs text-slate-500 mb-3 line-clamp-2 flex-1">{product.description}</p>
+                  <p className="text-xs text-slate-600 mb-3 line-clamp-2 flex-1">{product.description}</p>
 
                   {/* Rating */}
                   <div className="flex items-center gap-1.5 mb-3">
@@ -152,7 +158,7 @@ export default function FeaturedProducts() {
                   {/* Price */}
                   <div className="mb-3">
                     {product.originalPrice && (
-                      <p className="text-xs text-slate-400 line-through">
+                      <p className="text-xs text-slate-500 line-through">
                         {formatPrice(product.originalPrice)}
                       </p>
                     )}
@@ -165,10 +171,10 @@ export default function FeaturedProducts() {
                     target="_blank"
                     rel="noopener noreferrer nofollow"
                     className={`flex items-center justify-center gap-2 text-sm font-bold px-4 py-2.5 rounded-xl transition-all duration-200 hover:scale-[1.02] ${
-                      storeColors[product.store] || "bg-brand-600 text-white hover:bg-brand-700"
+                      storeBtnColors[product.store] ?? "bg-brand-600 text-white hover:bg-brand-700"
                     }`}
                   >
-                    Ver no {storeLabels[product.store] || "Loja"}
+                    Ver no {storeLabels[product.store] ?? "Loja"}
                     <ExternalLink size={13} />
                   </a>
                 </div>
@@ -177,8 +183,7 @@ export default function FeaturedProducts() {
           })}
         </div>
 
-        {/* Disclaimer */}
-        <p className="mt-6 text-center text-xs text-slate-400">
+        <p className="mt-6 text-center text-xs text-slate-500">
           * Links de afiliados. Podemos ganhar comissão nas compras, sem custo adicional para você.
         </p>
       </div>
