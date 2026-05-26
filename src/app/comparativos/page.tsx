@@ -53,7 +53,7 @@ export default function ComparativosPage() {
                     { name: "Deebot N10 Plus", price: 1499, suc: "4.300 Pa", esfregao: "✅ Básico", base: "✅ Esvaziamento", nota: 8.8, href: affiliateLinks["deebot-n10"] },
                     { name: "Positivo Smart", price: 899, suc: "1.800 Pa", esfregao: "❌", base: "❌", nota: 7.2, href: affiliateLinks["positivo-smart"], badge: "💵 Econômico" },
                   ].map((r) => (
-                    <tr key={r.name} className="border-b border-slate-50 hover:bg-slate-50 transition-colors">
+                    <tr key={r.name} className={`border-b border-slate-50 transition-colors ${r.badge?.includes("Melhor") ? "bg-amber-50 hover:bg-amber-100" : "hover:bg-slate-50"}`}>
                       <td className="px-4 py-3 font-medium text-slate-900">
                         {r.name}
                         {r.badge && <span className="ml-2 text-xs bg-brand-50 text-brand-700 px-2 py-0.5 rounded-full">{r.badge}</span>}
@@ -64,8 +64,8 @@ export default function ComparativosPage() {
                       <td className="px-4 py-3">{r.base}</td>
                       <td className="px-4 py-3 font-bold text-brand-600">{r.nota}/10</td>
                       <td className="px-4 py-3">
-                        <a href={r.href} target="_blank" rel="noopener noreferrer nofollow" className="inline-flex items-center gap-1 bg-yellow-400 text-yellow-900 font-bold text-xs px-3 py-1.5 rounded-lg hover:bg-yellow-500 transition-colors">
-                          Ver <ExternalLink size={10} />
+                        <a href={r.href} target="_blank" rel="noopener noreferrer nofollow" className="inline-flex items-center gap-1 bg-yellow-400 text-yellow-900 font-bold text-xs px-3 py-1.5 rounded-lg hover:bg-yellow-500 transition-colors whitespace-nowrap">
+                          Ver Oferta <ExternalLink size={10} />
                         </a>
                       </td>
                     </tr>
@@ -108,7 +108,7 @@ export default function ComparativosPage() {
                     { name: "Arlo Pro 5S", price: 1299, res: "2K HDR", uso: "Ambos", app: "❌", nota: 9.6, href: affiliateLinks["arlo-pro5"] },
                     { name: "Ring Doorbell 4", price: 799, res: "1080p", uso: "Porta", app: "✅", nota: 9.0, href: affiliateLinks["ring"] },
                   ].map((r) => (
-                    <tr key={r.name} className="border-b border-slate-50 hover:bg-slate-50 transition-colors">
+                    <tr key={r.name} className={`border-b border-slate-50 transition-colors ${r.badge?.includes("Melhor") ? "bg-amber-50 hover:bg-amber-100" : "hover:bg-slate-50"}`}>
                       <td className="px-4 py-3 font-medium text-slate-900">
                         {r.name}
                         {r.badge && <span className="ml-2 text-xs bg-brand-50 text-brand-700 px-2 py-0.5 rounded-full">{r.badge}</span>}
@@ -119,8 +119,8 @@ export default function ComparativosPage() {
                       <td className="px-4 py-3">{r.app}</td>
                       <td className="px-4 py-3 font-bold text-brand-600">{r.nota}/10</td>
                       <td className="px-4 py-3">
-                        <a href={r.href} target="_blank" rel="noopener noreferrer nofollow" className="inline-flex items-center gap-1 bg-yellow-400 text-yellow-900 font-bold text-xs px-3 py-1.5 rounded-lg hover:bg-yellow-500 transition-colors">
-                          Ver <ExternalLink size={10} />
+                        <a href={r.href} target="_blank" rel="noopener noreferrer nofollow" className="inline-flex items-center gap-1 bg-yellow-400 text-yellow-900 font-bold text-xs px-3 py-1.5 rounded-lg hover:bg-yellow-500 transition-colors whitespace-nowrap">
+                          Ver Oferta <ExternalLink size={10} />
                         </a>
                       </td>
                     </tr>
@@ -162,7 +162,7 @@ export default function ComparativosPage() {
                     { name: "Positivo Smart Lock", price: 399, bio: "❌", wifi: "✅", app: "✅ PT-BR", nota: 7.8, href: affiliateLinks["positivo-lock"], badge: "💵 Econômica" },
                     { name: "Samsung SHP-DP609", price: 1999, bio: "✅", wifi: "❌", app: "⚠️ EN", nota: 8.5, href: affiliateLinks["samsung-shp"] },
                   ].map((r) => (
-                    <tr key={r.name} className="border-b border-slate-50 hover:bg-slate-50 transition-colors">
+                    <tr key={r.name} className={`border-b border-slate-50 transition-colors ${r.badge?.includes("Melhor") ? "bg-amber-50 hover:bg-amber-100" : "hover:bg-slate-50"}`}>
                       <td className="px-4 py-3 font-medium text-slate-900">
                         {r.name}
                         {r.badge && <span className="ml-2 text-xs bg-brand-50 text-brand-700 px-2 py-0.5 rounded-full">{r.badge}</span>}
@@ -173,8 +173,8 @@ export default function ComparativosPage() {
                       <td className="px-4 py-3 text-slate-600">{r.app}</td>
                       <td className="px-4 py-3 font-bold text-brand-600">{r.nota}/10</td>
                       <td className="px-4 py-3">
-                        <a href={r.href} target="_blank" rel="noopener noreferrer nofollow" className="inline-flex items-center gap-1 bg-yellow-400 text-yellow-900 font-bold text-xs px-3 py-1.5 rounded-lg hover:bg-yellow-500 transition-colors">
-                          Ver <ExternalLink size={10} />
+                        <a href={r.href} target="_blank" rel="noopener noreferrer nofollow" className="inline-flex items-center gap-1 bg-yellow-400 text-yellow-900 font-bold text-xs px-3 py-1.5 rounded-lg hover:bg-yellow-500 transition-colors whitespace-nowrap">
+                          Ver Oferta <ExternalLink size={10} />
                         </a>
                       </td>
                     </tr>
@@ -216,7 +216,7 @@ export default function ComparativosPage() {
                     { name: "Positivo Smart Lamp", price: 49, tipo: "Lâmpada E27", proto: "Wi-Fi", rgb: "⚠️ Branco", nota: 7.5, href: affiliateLinks["lampada-positivo"], badge: "💵 Mais Barata" },
                     { name: "Tira LED Smart RGB 5m", price: 79, tipo: "Tira LED", proto: "Wi-Fi", rgb: "✅ RGB", nota: 7.8, href: affiliateLinks["led-rgb"] },
                   ].map((r) => (
-                    <tr key={r.name} className="border-b border-slate-50 hover:bg-slate-50 transition-colors">
+                    <tr key={r.name} className={`border-b border-slate-50 transition-colors ${r.badge?.includes("Melhor") ? "bg-amber-50 hover:bg-amber-100" : "hover:bg-slate-50"}`}>
                       <td className="px-4 py-3 font-medium text-slate-900">
                         {r.name}
                         {r.badge && <span className="ml-2 text-xs bg-brand-50 text-brand-700 px-2 py-0.5 rounded-full">{r.badge}</span>}
@@ -227,8 +227,8 @@ export default function ComparativosPage() {
                       <td className="px-4 py-3">{r.rgb}</td>
                       <td className="px-4 py-3 font-bold text-brand-600">{r.nota}/10</td>
                       <td className="px-4 py-3">
-                        <a href={r.href} target="_blank" rel="noopener noreferrer nofollow" className="inline-flex items-center gap-1 bg-yellow-400 text-yellow-900 font-bold text-xs px-3 py-1.5 rounded-lg hover:bg-yellow-500 transition-colors">
-                          Ver <ExternalLink size={10} />
+                        <a href={r.href} target="_blank" rel="noopener noreferrer nofollow" className="inline-flex items-center gap-1 bg-yellow-400 text-yellow-900 font-bold text-xs px-3 py-1.5 rounded-lg hover:bg-yellow-500 transition-colors whitespace-nowrap">
+                          Ver Oferta <ExternalLink size={10} />
                         </a>
                       </td>
                     </tr>

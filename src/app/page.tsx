@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import HeroSection from "@/components/home/HeroSection";
+import TrustStrip from "@/components/home/TrustStrip";
 import CategoriesSection from "@/components/home/CategoriesSection";
 import FeaturedProducts from "@/components/home/FeaturedProducts";
 import SmartFindsSection from "@/components/home/SmartFindsSection";
@@ -23,6 +24,7 @@ export default function HomePage() {
   return (
     <>
       <HeroSection />
+      <TrustStrip />
       <CategoriesSection />
       <FeaturedProducts />
       <FutureHomeSection />

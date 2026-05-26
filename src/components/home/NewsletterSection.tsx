@@ -1,4 +1,4 @@
-import { Mail } from "lucide-react";
+import { Gift } from "lucide-react";
 import NewsletterForm from "./NewsletterForm";
 
 export default function NewsletterSection() {
@@ -15,22 +15,31 @@ export default function NewsletterSection() {
 
       <div className="relative container-site">
         <div className="max-w-2xl mx-auto text-center">
-          <div className="inline-flex items-center justify-center w-14 h-14 bg-white/20 rounded-2xl mb-6">
-            <Mail size={26} className="text-white" />
+          {/* Lead magnet badge */}
+          <div className="inline-flex items-center gap-2 bg-white/20 border border-white/30 text-white text-sm font-bold px-4 py-2 rounded-full mb-6">
+            <Gift size={16} className="text-yellow-300" />
+            GRÁTIS: Guia Casa Inteligente com R$500
           </div>
 
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-            Receba as Melhores Ofertas
+            Receba o Guia + Melhores Ofertas
           </h2>
-          <p className="text-white/90 text-lg mb-8 leading-relaxed">
-            Cadastre-se e receba semanalmente: ofertas imperdíveis, novos lançamentos e guias exclusivos de casa inteligente.
+          <p className="text-white/90 text-lg mb-3 leading-relaxed">
+            Cadastre-se e receba <strong>gratuitamente</strong> nosso guia com os 12 produtos
+            essenciais para montar sua casa inteligente com qualquer orçamento.
+          </p>
+          <p className="text-white/70 text-sm mb-8">
+            + Toda semana: novas ofertas, lançamentos e guias exclusivos direto no seu e-mail.
           </p>
 
           <NewsletterForm />
 
-          <p className="mt-4 text-white/60 text-xs">
-            ✓ Sem spam &nbsp;·&nbsp; ✓ Cancele quando quiser &nbsp;·&nbsp; ✓ 100% gratuito
-          </p>
+          <div className="mt-5 flex flex-wrap items-center justify-center gap-4 text-white/60 text-xs">
+            <span>✓ Sem spam</span>
+            <span>✓ Cancele quando quiser</span>
+            <span>✓ 100% gratuito</span>
+            <span>✓ +5.000 assinantes</span>
+          </div>
         </div>
       </div>
     </section>

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { ExternalLink, Flame } from "lucide-react";
-import { formatPrice } from "@/lib/utils";
+import { formatPrice, calculateDiscount } from "@/lib/utils";
 import { productImages } from "@/lib/category-images";
 
 const achados = [
@@ -73,52 +73,73 @@ export default function SmartFindsSection() {
               </span>
             </div>
             <h2 className="text-3xl font-bold text-slate-900">Achados Smart 🔥</h2>
-            <p className="text-slate-600 mt-1">Ofertas imperdíveis em automação residencial</p>
+            <p className="text-slate-500 mt-1 text-sm">
+              Ofertas verificadas hoje. Aproveite enquanto dura!
+            </p>
           </div>
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-          {achados.map((item) => (
-            <a
-              key={item.name}
-              href={item.href}
-              target="_blank"
-              rel="noopener noreferrer nofollow"
-              className="group bg-white rounded-2xl border border-slate-100 hover:border-orange-200 hover:shadow-lg transition-all duration-200 hover:-translate-y-1 flex flex-col overflow-hidden"
-            >
-              {/* Product image */}
-              <div className="relative h-28 bg-slate-50 overflow-hidden">
-                <Image
-                  src={item.image}
-                  alt={item.name}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-300"
-                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 16vw"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-                <div className="absolute top-2 left-2">
-                  <span className="text-xs font-bold text-white bg-orange-500 px-2 py-0.5 rounded-full shadow">
-                    {item.badge}
-                  </span>
-                </div>
-              </div>
+          {achados.map((item) => {
+            const discount = item.originalPrice
+              ? calculateDiscount(item.originalPrice, item.price)
+              : 0;
 
-              {/* Info */}
-              <div className="p-3 flex flex-col flex-1">
-                <h3 className="text-xs font-semibold text-slate-800 leading-tight mb-2 line-clamp-2 flex-1">
-                  {item.name}
-                </h3>
-                <div>
-                  <p className="text-xs text-slate-500 line-through">{formatPrice(item.originalPrice)}</p>
-                  <p className="text-base font-bold text-slate-900">{formatPrice(item.price)}</p>
-                  <div className="flex items-center justify-between mt-1.5">
-                    <p className="text-xs text-slate-600 font-medium">{item.store}</p>
-                    <ExternalLink size={10} className="text-slate-400" />
+            return (
+              <a
+                key={item.name}
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer nofollow"
+                className="group bg-white rounded-2xl border border-slate-100 hover:border-orange-300 hover:shadow-lg transition-all duration-200 hover:-translate-y-1 flex flex-col overflow-hidden"
+              >
+                {/* Product image */}
+                <div className="relative h-28 bg-slate-50 overflow-hidden">
+                  <Image
+                    src={item.image}
+                    alt={item.name}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 16vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+
+                  {/* Label badge (top-left) */}
+                  <div className="absolute top-2 left-2">
+                    <span className="text-xs font-bold text-white bg-orange-500 px-1.5 py-0.5 rounded-full shadow">
+                      {item.badge}
+                    </span>
+                  </div>
+
+                  {/* Discount % (top-right) */}
+                  {discount > 0 && (
+                    <div className="absolute top-2 right-2">
+                      <span className="text-xs font-black text-white bg-red-500 px-1.5 py-0.5 rounded-full shadow">
+                        -{discount}%
+                      </span>
+                    </div>
+                  )}
+                </div>
+
+                {/* Info */}
+                <div className="p-3 flex flex-col flex-1">
+                  <h3 className="text-xs font-semibold text-slate-800 leading-tight mb-2 line-clamp-2 flex-1">
+                    {item.name}
+                  </h3>
+                  <div>
+                    <p className="text-xs text-slate-400 line-through">{formatPrice(item.originalPrice)}</p>
+                    <p className="text-base font-bold text-slate-900">{formatPrice(item.price)}</p>
+                    <div className="flex items-center justify-between mt-1.5">
+                      <p className="text-xs text-green-600 font-semibold">
+                        -{formatPrice(item.originalPrice - item.price)}
+                      </p>
+                      <ExternalLink size={10} className="text-slate-400" />
+                    </div>
                   </div>
                 </div>
-              </div>
-            </a>
-          ))}
+              </a>
+            );
+          })}
         </div>
       </div>
     </section>

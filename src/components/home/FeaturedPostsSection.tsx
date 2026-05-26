@@ -17,8 +17,8 @@ export default function FeaturedPostsSection({ posts }: Props) {
       <div className="container-site">
         <div className="flex items-center justify-between mb-10">
           <div>
-            <h2 className="text-3xl font-bold text-slate-900">Artigos em Destaque</h2>
-            <p className="text-slate-500 mt-1">Guias completos testados pela equipe Casa Tech Brasil</p>
+            <h2 className="text-3xl font-bold text-slate-900">Guias Mais Lidos</h2>
+            <p className="text-slate-500 mt-1">Pesquisa pronta: comparamos tudo para você decidir melhor</p>
           </div>
           <Link
             href="/blog"

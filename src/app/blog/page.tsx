@@ -46,9 +46,22 @@ export default async function BlogPage({ searchParams }: Props) {
               ? `📂 ${categories.find((c) => c.slug === categoriaAtiva)?.name || categoriaAtiva}`
               : "Blog Casa Inteligente"}
           </h1>
-          <p className="text-slate-500 text-lg max-w-2xl">
+          <p className="text-slate-500 text-lg max-w-2xl mb-4">
             Guias completos, reviews honestos e comparativos detalhados para você tomar as melhores decisões.
           </p>
+          {!categoriaAtiva && (
+            <div className="flex flex-wrap gap-4 text-sm">
+              {[
+                { icon: "📝", label: "30+ guias publicados" },
+                { icon: "🔬", label: "Reviews 100% independentes" },
+                { icon: "📅", label: "Atualizado semanalmente" },
+              ].map((s) => (
+                <span key={s.label} className="flex items-center gap-1.5 text-slate-500 bg-white border border-slate-100 px-3 py-1.5 rounded-full">
+                  <span>{s.icon}</span> {s.label}
+                </span>
+              ))}
+            </div>
+          )}
         </div>
 
         {/* Category filters */}
