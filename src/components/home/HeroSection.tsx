@@ -40,7 +40,7 @@ export default function HeroSection() {
           {/* Headline */}
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight mb-6">
             Transforme sua casa em um{" "}
-            <span className="bg-gradient-to-r from-brand-400 to-cyan-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-sky-200 to-cyan-300 bg-clip-text text-transparent">
               lar inteligente
             </span>
           </h1>

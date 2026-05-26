@@ -23,7 +23,7 @@ function imgPlus(id: string, w: number, h: number): string {
 const categoryImageIds: Record<string, string> = {
   // Categorias principais
   "robos-aspiradores":     "1558317374-067fb5f30001",   // robô aspirador branco no tapete
-  "cameras-wifi":          "1526947425960-945c6e72858f", // câmera de segurança dome
+  "cameras-wifi":          "1670278458296-00ff8a63141e", // câmera Wi-Fi dome indoor
   "fechaduras-digitais":   "1558002038-1055907df827",    // fechadura inteligente + smartphone
   "iluminacao-smart":      "1590845947698-8924d7409b56", // lâmpada LED smart amarela
   "assistentes-virtuais":  "1543512214-318c7553f230",    // Amazon Echo / smart speaker
@@ -40,7 +40,7 @@ const categoryImageIds: Record<string, string> = {
 
   // Aliases legados
   "robo-aspirador":  "1558317374-067fb5f30001",
-  "camera":          "1526947425960-945c6e72858f",
+  "camera":          "1670278458296-00ff8a63141e",
   "fechadura":       "1558002038-1055907df827",
   "iluminacao":      "1590845947698-8924d7409b56", // lâmpada LED smart
   "alexa":           "1543512214-318c7553f230",
@@ -67,7 +67,7 @@ export const productImages: Record<string, string> = {
   "reolink":         imgPlus("1675016457613-2291390d1bf6", 500, 500), // câmera externa 4K
   "intelbras-fr620": img("1558002038-1055907df827", 500, 500),  // fechadura + smartphone
   "govee":           img("1565382038303-8c62e88d119a", 500, 500), // tira LED RGB colorida
-  "tapo-c200":       img("1526947425960-945c6e72858f", 500, 500), // câmera dome interna
+  "tapo-c200":       img("1670278458254-0df3f72ab093", 500, 500), // câmera Wi-Fi indoor colorida
 
   // ── Seção Achados da Semana (SmartFindsSection) ────────────────────────────
   "lampada":         img("1590845947698-8924d7409b56", 500, 500),   // lâmpada LED smart amarela
