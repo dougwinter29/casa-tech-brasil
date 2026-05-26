@@ -56,7 +56,7 @@ export default function FutureHomeSection() {
               className="group relative bg-gradient-to-b from-slate-50 to-white rounded-2xl border border-slate-100 p-6 hover:border-brand-200 hover:shadow-lg transition-all duration-200 block"
             >
               <div className="text-3xl mb-4">{step.emoji}</div>
-              <div className="absolute top-4 right-4 text-4xl font-black text-slate-300 group-hover:text-brand-200 transition-colors">
+              <div className="absolute top-4 right-4 text-4xl font-black text-brand-400 group-hover:text-brand-600 transition-colors select-none">
                 {step.step}
               </div>
               <h3 className="font-bold text-slate-900 mb-2 group-hover:text-brand-600 transition-colors">

@@ -23,31 +23,31 @@ function imgPlus(id: string, w: number, h: number): string {
 const categoryImageIds: Record<string, string> = {
   // Categorias principais
   "robos-aspiradores":     "1558317374-067fb5f30001",   // robô aspirador branco no tapete
-  "cameras-wifi":          "1526947425960-945c6e72858f", // câmera de segurança
+  "cameras-wifi":          "1526947425960-945c6e72858f", // câmera de segurança dome
   "fechaduras-digitais":   "1558002038-1055907df827",    // fechadura inteligente + smartphone
-  "iluminacao-smart":      "1559028012-481c04fa702d",    // lâmpada LED smart
+  "iluminacao-smart":      "1590845947698-8924d7409b56", // lâmpada LED smart amarela
   "assistentes-virtuais":  "1543512214-318c7553f230",    // Amazon Echo / smart speaker
-  "sensores":              "1558346490-a72e53ae2d4f",    // sensor IoT
-  "interruptores-smart":   "1556742049-0cfed4f6a45d",   // tomada/interruptor smart
-  "tomadas-smart":         "1600585154526-990dced4db0d", // hub smart home
+  "sensores":              "1666401565408-9b6b0741f0d6", // dispositivos IoT (plugs, sensores)
+  "interruptores-smart":   "1666401565408-9b6b0741f0d6", // dispositivos IoT
+  "tomadas-smart":         "1601467450590-8c3d11cde2fd", // réguas/tomadas inteligentes
 
   // Slugs usados nos posts MDX
-  "automacao-residencial":  "1600585154526-990dced4db0d",
-  "casa-inteligente":       "1600585154526-990dced4db0d",
-  "gadgets-futuristas":     "1558346490-a72e53ae2d4f",
-  "gadgets":                "1558346490-a72e53ae2d4f",
-  "iluminacao-inteligente": "1559028012-481c04fa702d",
+  "automacao-residencial":  "1586023492125-27b2c045efd7", // sala moderna — casa inteligente
+  "casa-inteligente":       "1586023492125-27b2c045efd7", // sala moderna — casa inteligente
+  "gadgets-futuristas":     "1586023492125-27b2c045efd7", // sala moderna
+  "gadgets":                "1586023492125-27b2c045efd7", // sala moderna
+  "iluminacao-inteligente": "1590845947698-8924d7409b56", // lâmpada LED smart
 
   // Aliases legados
   "robo-aspirador":  "1558317374-067fb5f30001",
   "camera":          "1526947425960-945c6e72858f",
   "fechadura":       "1558002038-1055907df827",
-  "iluminacao":      "1559028012-481c04fa702d",
+  "iluminacao":      "1590845947698-8924d7409b56", // lâmpada LED smart
   "alexa":           "1543512214-318c7553f230",
-  "automacao":       "1600585154526-990dced4db0d",
+  "automacao":       "1586023492125-27b2c045efd7", // sala moderna
 
   // Fallback
-  "default": "1600585154526-990dced4db0d",
+  "default": "1586023492125-27b2c045efd7", // sala de estar moderna minimalista
 };
 
 export function getCategoryImage(category: string, w = 600, h = 400): string {
@@ -70,9 +70,9 @@ export const productImages: Record<string, string> = {
   "tapo-c200":       img("1526947425960-945c6e72858f", 500, 500), // câmera dome interna
 
   // ── Seção Achados da Semana (SmartFindsSection) ────────────────────────────
-  "lampada":         img("1559028012-481c04fa702d", 500, 500),   // lâmpada LED smart
-  "tomada":          img("1556742049-0cfed4f6a45d", 500, 500),   // tomada inteligente
-  "sensor":          img("1558346490-a72e53ae2d4f", 500, 500),   // sensor IoT / presença
+  "lampada":         img("1590845947698-8924d7409b56", 500, 500),   // lâmpada LED smart amarela
+  "tomada":          img("1601467450590-8c3d11cde2fd", 500, 500),   // régua/tomada inteligente
+  "sensor":          img("1666401565408-9b6b0741f0d6", 500, 500),   // dispositivos IoT top-down
   "controle-ir":     imgPlus("1663100617829-5e747d55ed34", 500, 500), // controle smart home
   "tira-led":        img("1565382038303-8c62e88d119a", 500, 500), // tira LED RGB na parede
   "camera-externa":  imgPlus("1675016457613-2291390d1bf6", 500, 500), // câmera externa
