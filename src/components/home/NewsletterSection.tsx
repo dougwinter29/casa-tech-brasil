@@ -3,7 +3,10 @@ import NewsletterForm from "./NewsletterForm";
 
 export default function NewsletterSection() {
   return (
-    <section className="py-16 bg-brand-700 bg-gradient-to-br from-brand-600 to-brand-800 relative overflow-hidden">
+    <section
+      className="py-16 relative overflow-hidden"
+      style={{ background: "linear-gradient(135deg, #2563eb 0%, #1e40af 100%)" }}
+    >
       <div
         className="absolute inset-0 opacity-10"
         style={{
