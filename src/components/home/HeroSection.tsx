@@ -59,8 +59,8 @@ export default function HeroSection() {
           {/* Stats */}
           <div className="grid grid-cols-3 gap-6 max-w-md mx-auto">
             {[
-              { value: "10+", label: "Guias Completos" },
-              { value: "50+", label: "Produtos Testados" },
+              { value: "30+", label: "Guias Completos" },
+              { value: "100+", label: "Produtos Avaliados" },
               { value: "100%", label: "Reviews Honestos" },
             ].map((stat) => (
               <div key={stat.label} className="text-center">

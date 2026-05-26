@@ -1,55 +1,79 @@
 /**
- * Mapeamento de imagens Unsplash por categoria.
- * Formato: https://images.unsplash.com/photo-{ID}?auto=format&fit=crop&w={w}&h={h}&q=80
+ * Mapeamento de imagens Unsplash por categoria e produto.
+ *
+ * Dois domínios:
+ *   images.unsplash.com  → fotos gratuitas  (photo-ID)
+ *   plus.unsplash.com    → fotos premium    (premium_photo-ID)
+ *
+ * Todos os IDs abaixo foram verificados e retornam imagem válida.
  */
 
+// ─── Helpers ─────────────────────────────────────────────────────────────────
+
+function img(id: string, w: number, h: number): string {
+  return `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&h=${h}&q=80`;
+}
+
+function imgPlus(id: string, w: number, h: number): string {
+  return `https://plus.unsplash.com/premium_photo-${id}?auto=format&fit=crop&w=${w}&h=${h}&q=80`;
+}
+
+// ─── Mapa de IDs por categoria (fotos gratuitas) ──────────────────────────────
+
 const categoryImageIds: Record<string, string> = {
-  // ── Categorias principais do site ─────────────────────────────────────────
-  "robos-aspiradores":    "1558618666-fcd25c85cd64",  // robot vacuum on floor ✅
-  "cameras-wifi":         "1526947425960-945c6e72858f", // security camera ✅
-  "fechaduras-digitais":  "1614064641938-3bbee52942c7", // smart door lock ✅
-  "iluminacao-smart":     "1559028012-481c04fa702d",   // LED smart bulb ✅
-  "assistentes-virtuais": "1543512214-318c7553f230",   // Amazon Echo / smart speaker ✅
-  "sensores":             "1558346490-a72e53ae2d4f",   // IoT sensor ✅
-  "interruptores-smart":  "1556742049-0cfed4f6a45d",  // smart switch / IoT plug ✅
-  "tomadas-smart":        "1600585154526-990dced4db0d", // smart outlet / hub ✅
+  // Categorias principais
+  "robos-aspiradores":     "1558317374-067fb5f30001",   // robô aspirador branco no tapete
+  "cameras-wifi":          "1526947425960-945c6e72858f", // câmera de segurança
+  "fechaduras-digitais":   "1558002038-1055907df827",    // fechadura inteligente + smartphone
+  "iluminacao-smart":      "1559028012-481c04fa702d",    // lâmpada LED smart
+  "assistentes-virtuais":  "1543512214-318c7553f230",    // Amazon Echo / smart speaker
+  "sensores":              "1558346490-a72e53ae2d4f",    // sensor IoT
+  "interruptores-smart":   "1556742049-0cfed4f6a45d",   // tomada/interruptor smart
+  "tomadas-smart":         "1600585154526-990dced4db0d", // hub smart home
 
-  // ── Slugs usados em posts MDX ─────────────────────────────────────────────
-  "automacao-residencial": "1600585154526-990dced4db0d", // smart home device ✅
-  "casa-inteligente":      "1600585154526-990dced4db0d", // smart home interior ✅
-  "gadgets-futuristas":    "1558346490-a72e53ae2d4f",    // IoT / tech gadget ✅
-  "gadgets":               "1558346490-a72e53ae2d4f",    // IoT / tech gadget ✅
-  "iluminacao-inteligente":"1559028012-481c04fa702d",   // LED smart bulb ✅
+  // Slugs usados nos posts MDX
+  "automacao-residencial":  "1600585154526-990dced4db0d",
+  "casa-inteligente":       "1600585154526-990dced4db0d",
+  "gadgets-futuristas":     "1558346490-a72e53ae2d4f",
+  "gadgets":                "1558346490-a72e53ae2d4f",
+  "iluminacao-inteligente": "1559028012-481c04fa702d",
 
-  // ── Aliases legados ───────────────────────────────────────────────────────
-  "robo-aspirador":  "1558618666-fcd25c85cd64",
+  // Aliases legados
+  "robo-aspirador":  "1558317374-067fb5f30001",
   "camera":          "1526947425960-945c6e72858f",
-  "fechadura":       "1614064641938-3bbee52942c7",
+  "fechadura":       "1558002038-1055907df827",
   "iluminacao":      "1559028012-481c04fa702d",
   "alexa":           "1543512214-318c7553f230",
   "automacao":       "1600585154526-990dced4db0d",
 
-  // ── Fallback ──────────────────────────────────────────────────────────────
-  "default":         "1600585154526-990dced4db0d",  // smart home device ✅
+  // Fallback
+  "default": "1600585154526-990dced4db0d",
 };
 
 export function getCategoryImage(category: string, w = 600, h = 400): string {
   const id = categoryImageIds[category] ?? categoryImageIds["default"];
-  return `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&h=${h}&q=80`;
+  return img(id, w, h);
 }
 
-/** Imagens de produto por tipo */
+// ─── Imagens de produto (específicas por item) ────────────────────────────────
+//
+// Cada produto usa a imagem mais representativa disponível.
+// Fotos premium (plus.unsplash.com) usam imgPlus().
+
 export const productImages: Record<string, string> = {
-  "roborock-s8":     getCategoryImage("robos-aspiradores", 500, 500),
-  "echo-dot-5":      getCategoryImage("assistentes-virtuais", 500, 500),
-  "reolink":         getCategoryImage("cameras-wifi", 500, 500),
-  "intelbras-fr620": getCategoryImage("fechaduras-digitais", 500, 500),
-  "govee":           getCategoryImage("iluminacao-smart", 500, 500),
-  "tapo-c200":       getCategoryImage("cameras-wifi", 500, 500),
-  "lampada":         getCategoryImage("iluminacao-smart", 500, 500),
-  "tomada":          getCategoryImage("tomadas-smart", 500, 500),
-  "sensor":          getCategoryImage("sensores", 500, 500),
-  "controle-ir":     getCategoryImage("assistentes-virtuais", 500, 500),
-  "tira-led":        getCategoryImage("iluminacao-smart", 500, 500),
-  "camera-externa":  getCategoryImage("cameras-wifi", 500, 500),
+  // ── Seção Melhores Produtos / FeaturedProducts ─────────────────────────────
+  "roborock-s8":     img("1558317374-067fb5f30001", 500, 500),  // robô aspirador branco
+  "echo-dot-5":      img("1543512214-318c7553f230", 500, 500),  // Amazon Echo Dot
+  "reolink":         imgPlus("1675016457613-2291390d1bf6", 500, 500), // câmera externa 4K
+  "intelbras-fr620": img("1558002038-1055907df827", 500, 500),  // fechadura + smartphone
+  "govee":           img("1565382038303-8c62e88d119a", 500, 500), // tira LED RGB colorida
+  "tapo-c200":       img("1526947425960-945c6e72858f", 500, 500), // câmera dome interna
+
+  // ── Seção Achados da Semana (SmartFindsSection) ────────────────────────────
+  "lampada":         img("1559028012-481c04fa702d", 500, 500),   // lâmpada LED smart
+  "tomada":          img("1556742049-0cfed4f6a45d", 500, 500),   // tomada inteligente
+  "sensor":          img("1558346490-a72e53ae2d4f", 500, 500),   // sensor IoT / presença
+  "controle-ir":     imgPlus("1663100617829-5e747d55ed34", 500, 500), // controle smart home
+  "tira-led":        img("1565382038303-8c62e88d119a", 500, 500), // tira LED RGB na parede
+  "camera-externa":  imgPlus("1675016457613-2291390d1bf6", 500, 500), // câmera externa
 };

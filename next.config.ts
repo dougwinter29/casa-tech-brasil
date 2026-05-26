@@ -9,6 +9,7 @@ const nextConfig: NextConfig = {
     unoptimized: isDev,
     remotePatterns: [
       { protocol: "https", hostname: "images.unsplash.com" },
+      { protocol: "https", hostname: "plus.unsplash.com" },
       { protocol: "https", hostname: "via.placeholder.com" },
       { protocol: "https", hostname: "**.mlstatic.com" },
     ],
