@@ -3,7 +3,7 @@ import NewsletterForm from "./NewsletterForm";
 
 export default function NewsletterSection() {
   return (
-    <section className="py-16 bg-gradient-to-br from-brand-600 to-brand-800 relative overflow-hidden">
+    <section className="py-16 bg-brand-700 bg-gradient-to-br from-brand-600 to-brand-800 relative overflow-hidden">
       <div
         className="absolute inset-0 opacity-10"
         style={{
@@ -24,17 +24,17 @@ export default function NewsletterSection() {
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             Receba o Guia + Melhores Ofertas
           </h2>
-          <p className="text-white/90 text-lg mb-3 leading-relaxed">
+          <p className="text-white text-lg mb-3 leading-relaxed">
             Cadastre-se e receba <strong>gratuitamente</strong> nosso guia com os 12 produtos
             essenciais para montar sua casa inteligente com qualquer orçamento.
           </p>
-          <p className="text-white/70 text-sm mb-8">
+          <p className="text-white/80 text-sm mb-8">
             + Toda semana: novas ofertas, lançamentos e guias exclusivos direto no seu e-mail.
           </p>
 
           <NewsletterForm />
 
-          <div className="mt-5 flex flex-wrap items-center justify-center gap-4 text-white/60 text-xs">
+          <div className="mt-5 flex flex-wrap items-center justify-center gap-4 text-white/80 text-xs">
             <span>✓ Sem spam</span>
             <span>✓ Cancele quando quiser</span>
             <span>✓ 100% gratuito</span>
