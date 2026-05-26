@@ -32,7 +32,7 @@ export default function HeroSection() {
         <div className="max-w-4xl mx-auto text-center">
 
           {/* Social proof badge */}
-          <div className="inline-flex items-center gap-2 bg-brand-500/20 border border-brand-500/30 text-brand-300 text-sm font-medium px-4 py-2 rounded-full mb-8">
+          <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white text-sm font-medium px-4 py-2 rounded-full mb-8">
             <Zap size={14} className="text-yellow-400" />
             <span>+50.000 leitores mensais • Reviews 100% independentes</span>
           </div>
