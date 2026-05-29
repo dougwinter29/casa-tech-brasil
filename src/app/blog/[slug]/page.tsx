@@ -93,7 +93,10 @@ export default async function BlogPostPage({ params }: Props) {
     .replace(/^\> (.+)$/gm, '<blockquote><p>$1</p></blockquote>')
     .replace(/^\- (.+)$/gm, '<li>$1</li>')
     .replace(/(<li>.*<\/li>\n?)+/g, (m) => `<ul>${m}</ul>`)
-    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" rel="noopener noreferrer">$1</a>')
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_, text, url) => {
+      const isExternal = url.startsWith('http');
+      return `<a href="${url}"${isExternal ? ' target="_blank"' : ''} rel="noopener noreferrer${isExternal ? ' nofollow' : ''}">${text}</a>`;
+    })
     .replace(/^(?!<[h|u|b|l|a|s|p|c])(.+)$/gm, '<p>$1</p>')
     .replace(/\n{2,}/g, '\n')
     .replace(/\|(.+)\|\n\|[-| ]+\|\n((?:\|.+\|\n?)+)/g, (match) => {
